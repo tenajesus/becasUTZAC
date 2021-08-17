@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Becas UTZAC 2021
+          Condonación de Colegiatura
         </q-toolbar-title>
 
         
@@ -54,45 +54,33 @@ const linksList = [
   {
     title: 'Manual',
     caption: 'Manual de Captura',
-    icon: 'face',
+    icon: 'picture_as_pdf',
     link: 'https://quasar.dev'
   },
   {
     title: 'Solicitud',
     caption: 'Capturar Solicitud',
-    icon: 'dashboard',
+    icon: 'edit',
     link: 'https://github.com/quasarframework'
   },
   {
     title: 'Status',
     caption: 'Status de Solicitud',
-    icon: 'chat',
+    icon: 'info',
     link: 'https://chat.quasar.dev'
   },
   {
-    title: 'Forum',
-    caption: 'Documentos comprobatorios',
-    icon: 'record_voice_over',
+    title: 'Documentación Personal',
+    caption: 'Mis documentos comprobatorios',
+    icon: 'folder_shared',
     link: 'https://forum.quasar.dev'
   },
   {
-    title: 'Twitter',
+    title: 'Salir del Sistema',
     caption: 'Cerrar Sesión',
-    icon: 'rss_feed',
+    icon: 'logout',
     link: 'https://twitter.quasar.dev'
   },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
 ];
 
 import { defineComponent, ref } from 'vue'
