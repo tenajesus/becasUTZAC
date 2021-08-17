@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Becas UTZAC 2021
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        
       </q-toolbar>
     </q-header>
 
@@ -54,13 +54,13 @@ const linksList = [
   {
     title: 'Docs',
     caption: 'quasar.dev',
-    icon: 'school',
+    icon: 'face',
     link: 'https://quasar.dev'
   },
   {
     title: 'Github',
     caption: 'github.com/quasarframework',
-    icon: 'code',
+    icon: 'dashboard',
     link: 'https://github.com/quasarframework'
   },
   {
