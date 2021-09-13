@@ -76,7 +76,7 @@ const linksList = [
     link: 'https://forum.quasar.dev'
   },
   {
-    title: 'Exit del Siistem',
+    title: 'Exit del Siiistem',
     caption: 'Sierrar el system',
     icon: 'logout',
     link: 'https://twitter.quasar.dev'
