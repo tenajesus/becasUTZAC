@@ -27,27 +27,65 @@
       </div>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          
-        </q-item-label>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
+    <q-drawer
+        v-model="leftDrawerOpen"
+        show-if-above
+        :width="200"
+        :breakpoint="400"
+      >
+        <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
+          <q-list padding>
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="inbox" />
+              </q-item-section>
+
+              <q-item-section>
+                Manual del Sistema
+              </q-item-section>
+            </q-item>
+
+            <q-item active clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="star" />
+              </q-item-section>
+
+              <q-item-section>
+                Star
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="send" />
+              </q-item-section>
+
+              <q-item-section>
+                Send
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="drafts" />
+              </q-item-section>
+
+              <q-item-section>
+                Drafts
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-scroll-area>
+
+        <q-img class="absolute-top" src="~assets/back.png" style="height: 135px">
+          <div class="absolute-bottom bg-transparent">
+            <q-avatar size="80px" class="q-mb-sm">
+              
+            </q-avatar>
+          </div>
+        </q-img>
+      </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -56,41 +94,7 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
 
-
-const linksList = [
-  {
-    title: 'Manual',
-    caption: 'Manual de Captura',
-    icon: 'picture_as_pdf',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Solicitud',
-    caption: 'Capturar Solicitud',
-    icon: 'edit',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Status',
-    caption: 'Status de Solicitud',
-    icon: 'info',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Documentación Personal',
-    caption: 'Mis documentos comprobatorios',
-    icon: 'folder_shared',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Exit del Siiistem',
-    caption: 'Sierrar el system',
-    icon: 'logout',
-    link: 'https://twitter.quasar.dev'
-  },
-];
 
 import { defineComponent, ref } from 'vue'
 import { date } from 'quasar'
@@ -99,14 +103,14 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+    // EssentialLink
   },
 
   setup () {
     const leftDrawerOpen = ref(false)
 
     return {
-      essentialLinks: linksList,
+      // essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
