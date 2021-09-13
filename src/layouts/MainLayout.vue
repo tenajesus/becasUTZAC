@@ -10,13 +10,21 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-
-        <q-toolbar-title>
+        
+        <!-- <q-toolbar-title>
           Condonación de Colegiatura
-        </q-toolbar-title>
+        </q-toolbar-title> -->
 
         
       </q-toolbar>
+      <div class="q-px-lg q-mb-md">
+      <div class="text-h4">
+          Condonación de Colegiatura
+        </div>
+        <div class="text-subtitle1">
+          {{fecha}}
+        </div>
+      </div>
     </q-header>
 
     <q-drawer
@@ -30,7 +38,7 @@
           header
           class="text-grey-8"
         >
-          Essential Links
+          
         </q-item-label>
 
         <EssentialLink
@@ -49,6 +57,7 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink.vue'
+
 
 const linksList = [
   {
@@ -84,6 +93,7 @@ const linksList = [
 ];
 
 import { defineComponent, ref } from 'vue'
+import { date } from 'quasar'
 
 export default defineComponent({
   name: 'MainLayout',
@@ -101,6 +111,13 @@ export default defineComponent({
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
+      
+    }
+  },
+  computed:{
+    fecha(){
+      const timeStamp = Date.now()
+      return date.formattedString = date.formatDate(timeStamp, 'DD-MM-YYYY')
     }
   }
 })
