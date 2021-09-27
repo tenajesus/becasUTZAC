@@ -2,11 +2,11 @@
   <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
     <div>
       <div style="font-size: 30vh">
-        No hay nada que ver
+        Error
       </div>
 
       <div class="text-h2" style="opacity:.4">
-       Ni madres
+      Url no encontrada
       </div>
 
       <q-btn
