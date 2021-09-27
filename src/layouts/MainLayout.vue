@@ -67,21 +67,21 @@
 
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="send" />
+                <q-icon name="estatus" />
               </q-item-section>
 
               <q-item-section>
-                Send
+                Estatus de solicitud
               </q-item-section>
             </q-item>
 
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="drafts" />
+                <q-icon name="logout" />
               </q-item-section>
 
               <q-item-section>
-                Drafts
+                Cerrar sesión
               </q-item-section>
             </q-item>
           </q-list>
