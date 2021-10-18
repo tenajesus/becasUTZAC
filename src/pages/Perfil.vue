@@ -37,7 +37,6 @@
         v-model="carrera"
       />
 
-
     </q-form>
 
   </div>
