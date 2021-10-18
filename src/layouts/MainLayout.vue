@@ -84,6 +84,16 @@
                 Estatus de solicitud
               </q-item-section>
             </q-item>
+            
+            <q-item clickable v-ripple to="/contacto">
+              <q-item-section avatar>
+                <q-icon name="contact_support" />
+              </q-item-section>
+
+              <q-item-section>
+                Contacto
+              </q-item-section>
+            </q-item>
 
             <q-item clickable v-ripple>
               <q-item-section avatar>
@@ -94,6 +104,7 @@
                 Cerrar sesión
               </q-item-section>
             </q-item>
+
           </q-list>
         </q-scroll-area>
 
