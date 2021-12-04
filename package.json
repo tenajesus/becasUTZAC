@@ -12,7 +12,9 @@
   "dependencies": {
     "@quasar/extras": "^1.10.10",
     "core-js": "^3.16.2",
-    "quasar": "^2.0.0"
+    "pdfjs-dist": "^2.10.377",
+    "quasar": "^2.0.0",
+    "vue-pdf": "^4.3.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.0",

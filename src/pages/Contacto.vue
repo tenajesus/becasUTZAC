@@ -1,23 +1,23 @@
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
+  <div class="text-green text-center q-pa-md flex flex-center">
     <div>
-      <div style="font-size: 30vh">
+      <div style="font-size: 4vh">
         Contacto
       </div>
-
-      <div class="text-h2" style="opacity:.4">
-      Si requieres ayuda por favor contacta al departamento de planeación
+       <q-separator inset />
+      <div class="text" style="opacity:.4">
+      Si requieres ayuda por favor contacta a la Dirección de Planeación
       </div>
-
-      <q-btn
-        class="q-mt-xl"
-        color="white"
-        text-color="blue"
-        unelevated
-        to="/"
-        label="Go Home"
-        no-caps
-      />
+      <div>
+        <q-separator inset />
+        Teléfono: 492-761-81 al 84
+      </div>
+      <div>
+        Extensiones
+      </div>
+      <div>
+       129 y 322
+      </div>
     </div>
   </div>
 </template>

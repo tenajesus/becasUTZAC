@@ -10,7 +10,7 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-        
+
         <!-- <q-toolbar-title>
           Condonación de Colegiatura
         </q-toolbar-title> -->
@@ -55,7 +55,11 @@
                 Perfil
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple to="/">
+            <q-item v-ripple 
+            tag="a"
+            target="_blank"
+            href="https://drive.google.com/file/d/1DPANMzX0P4J36k3SjGpwB76lc0SyXV9T/view?usp=sharing">
+
               <q-item-section avatar>
                 <q-icon name="picture_as_pdf" />
               </q-item-section>
@@ -71,7 +75,7 @@
               </q-item-section>
 
               <q-item-section>
-                Captura tus datos
+                Estudio Socio Económico
               </q-item-section>
             </q-item>
 
@@ -84,16 +88,10 @@
                 Estatus de solicitud
               </q-item-section>
             </q-item>
-            
-contacto_completo
-            <q-item clickable v-ripple to="/contacto">
+    
+            <q-item clickable v-ripple to="/contacto" >
               <q-item-section avatar>
                 <q-icon name="contact_support" />
-=======
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="contacto" />
- main
               </q-item-section>
 
               <q-item-section>
