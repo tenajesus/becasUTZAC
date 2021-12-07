@@ -75,7 +75,7 @@
               </q-item-section>
 
               <q-item-section>
-                Estudio Socio Económico
+                Estudio Socioeconómico
               </q-item-section>
             </q-item>
             <q-item active clickable v-ripple to="/files">
