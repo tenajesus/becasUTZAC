@@ -1,28 +1,31 @@
 <template>
   <div class="q-pa-md">
     <q-form>
-      <label>¿Tienes alguna discapacidad motriz?</label>
+      <label>Tienes Alguna discapacidad motriz ?</label>
       <q-select
         filled
         v-model="disc"
         :options="discapacidad"
         bg-color="teal-1"
       />
-      <label>¿Eres integrante de algún grupo indigena?</label>
+      <label>Eres Integrante de algún grupo indigena ?</label>
       <q-select
         filled
         v-model="model"
         :options="discapacidad"
         bg-color="teal-1"
       />
-      <label>¿Tu familia recibe apoyo del programa oportunidades?</label>
+      <label>Tu Familia recibe apoyo del programa oportunidades</label>
       <q-select
         filled
         v-model="model"
         :options="discapacidad"
         bg-color="teal-1"
       />
-      <label>¿Eres beneficiario de algún apoyo beca Federal, Estatal y/o Municipal?</label>
+      <label
+        >¿Eres beneficiario de algún apoyo (beca) Federal, Estatal y/o Municipal
+        ?</label
+      >
       <q-select
         filled
         v-model="model"
@@ -35,26 +38,26 @@
       <q-input filled type="text" v-model="periodicidad" bg-color="teal-1" />
       <label>Monto recibido</label>
       <q-input filled v-model="monto" bg-color="teal-1" />
-      <label>¿Dependes económicamente de tus padres?</label>
+      <label>¿ Dependes económicamente de tus padres ?</label>
       <q-select
         filled
         v-model="model"
         :options="discapacidad"
         bg-color="teal-1"
       />
-      <label>¿Estado civil?</label>
+      <label>¿ Estado Civil ?</label>
       <q-select
         filled
         v-model="model"
         :options="estadocivil"
         bg-color="teal-1"
       />
-      <label>¿Número de hijos?</label>
+      <label>¿ Número de Hijos ?</label>
       <q-select filled v-model="model" :options="hijos" bg-color="teal-1" />
-      <label>¿Trabajas actualmente?</label>
+      <label>¿ Trabajas Actualmente ?</label>
       <q-select filled v-model="model" :options="trabajas" bg-color="teal-1" />
       <label
-        >¿Cuantos miembros de tu familia dependen económicamente de ti?</label
+        >¿ Cuantos miembros de tu familia dependen económicamente de ti ?</label
       >
       <q-select
         filled
@@ -62,21 +65,23 @@
         :options="dependientes"
         bg-color="teal-1"
       />
-      <label>Domicilio en el que habitas actualmente</label>
+      <label>Domicilio en el que habitas Actualmente</label>
       <q-input filled v-model="domicilio" label="Calle, numero, colonia, CP" />
-      <label>¿Cuántos miembros son en tu familia, contando a todos los familares que
-        viven en la misma casa?</label>
+      <label
+        >¿Cuántos miembros son en tu familia, contando a todos los familares que
+        viven en la misma casa?</label
+      >
       <q-select
         filled
         v-model="model"
         :options="habitantes"
         bg-color="teal-1"
       />
-      <label>Telefóno de contacto de tus padres/tutor/algún familiar </label>
+      <label>Telefóno de contacto de tus padres/tut@r/algún familiar </label>
       <q-input filled v-model="telefono" />
       <label
-        >¿Para acudir a la Universidad tienes que rentar cuarto o casa, o vivir
-        con algún familiar?</label
+        >¿ Para acudir a la Universidad tienes que rentar cuarto o casa, o vivir
+        con algún familiar ?</label
       >
       <q-select filled v-model="model" :options="acudir" bg-color="teal-1" />
       <hr />
@@ -118,13 +123,14 @@
         v-model="model"
         :options="acudir"
         bg-color="teal-1"
-      /><label>¿La casa donde vive tu familia es?</label>
+      /><label>¿ La casa donde vive tu familia es ?</label>
       <q-select
         filled
         v-model="model"
         :options="estatushome"
         bg-color="teal-1"
-      />
+      /><label>Alumbrado Publico</label>
+      <q-select filled v-model="model" :options="acudir" bg-color="teal-1" />
       <hr />
       Características de la Casa
       <hr />
@@ -158,13 +164,13 @@
         v-model="model"
         :options="acudir"
         bg-color="teal-1"
-      /><label>¿El material del techo de la vivienda es de?</label>
+      /><label>¿El material del techo de la vivienda es de...?</label>
       <q-select
         filled
         v-model="model"
         :options="techo"
         bg-color="teal-1"
-      /><label>¿El material del piso de la vivienda es de?</label>
+      /><label>¿ El material del piso de la vivienda es de… ?</label>
       <q-select filled v-model="model" :options="piso" bg-color="teal-1" />
       <hr />
       Señala si cuentas con los siguientes aparatos o muebles
@@ -191,7 +197,7 @@
         v-model="model"
         :options="acudir"
         bg-color="teal-1"
-      /><label>Computadora personal</label>
+      /><label>Computadora Personal</label>
       <q-select
         filled
         v-model="model"
@@ -221,7 +227,8 @@
         v-model="model"
         :options="acudir"
         bg-color="teal-1"
-      />
+      /><label>Computadora Personal</label>
+      <q-select filled v-model="model" :options="acudir" bg-color="teal-1" />
       <label>¿Qué tipo de combustible que utilizan en tu casa?</label>
       <q-select
         filled
@@ -230,7 +237,8 @@
         bg-color="teal-1"
       />
       <label
-        >¿Qué medio de transportes utilizas para llegar a la Universidad?</label
+        >¿Qué medio de transportes utilizas para llegar a la Universidad
+        ?</label
       >
       <q-select
         filled
@@ -238,9 +246,9 @@
         :options="transportacion"
         bg-color="teal-1"
       />
-      <label>¿Viven tus padres?</label>
+      <label>¿ Viven tus padres ?</label>
       <q-select filled v-model="model" :options="padres" bg-color="teal-1" />
-      <label>¿Actualmente trabajan tus padres?</label>
+      <label>¿ Actualmente trabajan tus padres ?</label>
       <q-select
         filled
         v-model="model"
@@ -248,13 +256,13 @@
         bg-color="teal-1"
       />
       <label
-        >¿Tu familia cuenta con atención médica (por parte de alguna
-        institución de salud: IMSS, ISSSTE, Seguro Popular, Particular)?</label
+        >¿ Tu familia cuenta con atención médica (por parte de alguna
+        institución de salud: IMSS, ISSSTE, Seguro Popular, Particular) ?</label
       >
       <q-select filled v-model="model" :options="salud" bg-color="teal-1" />
       <label
-        >¿Cuál es la razón más importante que te impulsó a solicitar la
-        condonación de colegiatura?</label
+        >¿ Cuál es la razón más importante que te impulsó a solicitar la
+        condonación de colegiatura ?</label
       >
       <q-select filled v-model="model" :options="impulso" bg-color="teal-1" />
       <div>
@@ -280,7 +288,7 @@ export default defineComponent({
   return{
   disc:'',
   model:ref(null),
-  discapacidad:['Si','No'],
+  discapacidad:['Si:1','No:0'],
   estadocivil:['Soltero','Casado','Union Libre','Separado / Viudo / Divorciado'],
   hijos:['Ninguno','Uno','Dos','Tres o mas'],
   trabajas:['Nunca he trabajado','He trabajado anteriormente pero ahora no','Si, con mas de 20 horas a la semana'],
