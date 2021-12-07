@@ -72,7 +72,7 @@
         :options="habitantes"
         bg-color="teal-1"
       />
-      <label>Telefóno de contacto de tus padres/tut@r/algún familiar </label>
+      <label>Telefóno de contacto de tus padres/tutor/algún familiar </label>
       <q-input filled v-model="telefono" />
       <label
         >¿Para acudir a la Universidad tienes que rentar cuarto o casa, o vivir
