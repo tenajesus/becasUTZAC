@@ -78,8 +78,17 @@
                 Estudio Socio Económico
               </q-item-section>
             </q-item>
+            <q-item active clickable v-ripple to="/files">
+              <q-item-section avatar>
+                <q-icon name="file_upload" />
+              </q-item-section>
 
-            <q-item clickable v-ripple>
+              <q-item-section>
+                Cargar Comprobantes
+              </q-item-section>
+            </q-item>
+
+            <q-item active clickable v-ripple to="/status">
               <q-item-section avatar>
                 <q-icon name="info" />
               </q-item-section>
@@ -124,6 +133,16 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer elevated>
+        <q-toolbar class="glossy">
+          <q-toolbar-title class="text-caption">
+            <center>
+            Universidad Tecnológica del Estado de Zacatecas - Desarrollado por CDS Tecnologías de la Información
+            </center>
+            </q-toolbar-title>
+        </q-toolbar>
+      </q-footer>
   </q-layout>
 </template>
 

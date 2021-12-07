@@ -1,0 +1,172 @@
+[33mcommit da75c2b97462b2afdcd91f32e0bd7e1ee7a11c4c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Fri Dec 3 23:39:59 2021 -0600
+
+    Se añade estudio socioeconómcio
+
+[33mcommit cbb3654a2eaf32c41c7df7cd7b055a771584a20e[m
+Merge: 3f8e933 d2eb1fa
+Author: Salvador Rodríguez <39571410+tenajesus@users.noreply.github.com>
+Date:   Mon Oct 18 14:12:16 2021 -0500
+
+    Merge pull request #5 from lzapata/contacto_completo
+    
+    Cambio completo en contacto
+
+[33mcommit d2eb1fa51452bf908a5d7d974660ac9dd1c754f0[m
+Merge: 38f762f 3f8e933
+Author: Salvador Rodríguez <39571410+tenajesus@users.noreply.github.com>
+Date:   Mon Oct 18 14:12:09 2021 -0500
+
+    Merge branch 'main' into contacto_completo
+
+[33mcommit 38f762fdb0de67ecc8f0cfb6fcf0a8b72ab21994[m
+Author: Luis Zapata <luiszapata@MacBook-Air-de-Luis.local>
+Date:   Mon Oct 18 14:06:23 2021 -0500
+
+    Cambio completo en contacto
+
+[33mcommit 3f8e933cb67bce9a0013df7a721e4235ac574bd6[m
+Merge: 2658df4 d5c1246
+Author: Salvador Rodríguez <39571410+tenajesus@users.noreply.github.com>
+Date:   Mon Oct 18 12:43:32 2021 -0500
+
+    Merge pull request #4 from lzapata/contacto
+    
+    agregacion de la opcion contacto
+
+[33mcommit d5c1246b185c93d5b564ce150936df95640d6a0f[m
+Author: Luis Zapata <luiszapata@MacBook-Air-de-Luis.local>
+Date:   Mon Oct 18 12:40:21 2021 -0500
+
+    agregacion de la opcion contacto
+
+[33mcommit 2658df447c6fa3179d0737091512fbc717bcfadb[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Mon Oct 11 14:06:10 2021 -0500
+
+    Se añaden nuevos componentes al menú
+
+[33mcommit fed3f1210e8b5a6fe10e2df72165d526de9f285a[m
+Merge: 952d2de 4429aad
+Author: Salvador Rodríguez <39571410+tenajesus@users.noreply.github.com>
+Date:   Mon Sep 27 16:46:28 2021 -0500
+
+    Merge pull request #3 from lzapata/menu
+    
+    Modificación de opciones del menú
+
+[33mcommit 4429aad28b0ed0fb772b27cf35724346dd6701ed[m
+Author: Luis Zapata <luiszapata@MacBook-Air-de-Luis.local>
+Date:   Mon Sep 27 16:39:35 2021 -0500
+
+    Modificación de opciones del menú
+
+[33mcommit 952d2de0826c95281ac584014c45f38729e95da7[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Mon Sep 27 11:28:13 2021 -0500
+
+    Router y vistas
+
+[33mcommit 14a4c55eb782a9b38db7b8f53ede25381fccb9cf[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Mon Sep 13 14:15:14 2021 -0500
+
+    Modificación de Drawer
+
+[33mcommit fdf1187c4b4988e48f14c467c6f362f3be981bfc[m
+Merge: 1f88280 09cf184
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Mon Sep 13 13:45:06 2021 -0500
+
+    Merge branch 'main' of https://github.com/tenajesus/becasUTZAC
+
+[33mcommit 1f88280e585cb59a515c959b960232dd42f4cb72[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Mon Sep 13 13:43:38 2021 -0500
+
+    Testing2
+
+[33mcommit 09cf1845211e764945204b142c6a7f8d07f84e45[m
+Merge: 62ce995 3824bda
+Author: Salvador Rodríguez <39571410+tenajesus@users.noreply.github.com>
+Date:   Mon Sep 13 13:30:56 2021 -0500
+
+    Merge pull request #2 from lzapata/prueba2
+    
+    Prueba2 ha sido aceptada
+
+[33mcommit 3824bda03c5d1ea7df46d676f9f46f793d2120e8[m
+Author: Luis Zapata <luiszapata@MacBook-Air-de-Luis.local>
+Date:   Mon Sep 13 13:27:41 2021 -0500
+
+    cambie la opcioón salir
+
+[33mcommit 8a56063f6a3e0d351f2bec11e03b89ee28048eb2[m
+Author: Luis Zapata <luiszapata@MacBook-Air-de-Luis.local>
+Date:   Mon Sep 13 13:21:32 2021 -0500
+
+    Prueba de mosificaciín salir del sistema
+
+[33mcommit 4a04ebbf5f229d67240a9579a6293c2742216072[m
+Author: Luis Zapata <luiszapata@MacBook-Air-de-Luis.local>
+Date:   Mon Sep 13 13:18:47 2021 -0500
+
+    Prueba de mosificaciín salir del sistema
+
+[33mcommit 62ce995de913b19e587bb02e1f76a0e823e9e134[m
+Merge: 086b44d 1ff3f48
+Author: Salvador Rodríguez <39571410+tenajesus@users.noreply.github.com>
+Date:   Tue Aug 31 12:55:53 2021 -0500
+
+    Merge pull request #1 from lzapata/readme
+    
+    cambie el readme
+
+[33mcommit 1ff3f48b1a371199193774b66d5de5aa2c096317[m
+Author: Luis Zapata <luiszapata@MacBook-Air-de-Luis.local>
+Date:   Tue Aug 31 12:35:18 2021 -0500
+
+    cambie el readme
+
+[33mcommit 086b44d907c59a335a3c5e02eb89f17d8e58a675[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Tue Aug 17 15:39:16 2021 -0500
+
+    Modificacion imagen dgutyp
+
+[33mcommit d3bfcf998da786fc6bb60b4a2b65aa72aed8ccc4[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Tue Aug 17 15:13:16 2021 -0500
+
+    menú modificado
+
+[33mcommit 02152bb6526bfa2301e0639332b175250cbf7992[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Tue Aug 17 14:48:49 2021 -0500
+
+    Primeras modificaciones
+
+[33mcommit c942c9d896eb6da289bb8e5e2c26172430e26bba[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Tue Aug 17 14:07:47 2021 -0500
+
+    Preparando el entorno
+
+[33mcommit 910de1b5a2dca2d91859011cf8840525d46c4117[m
+Author: Salvador Rodríguez <tenajesus@hotmail.com>
+Date:   Tue Aug 17 13:52:38 2021 -0500
+
+    Modificacion
+
+[33mcommit 3fe98825aa63bf36883eb20cf7d74c9d16e264ab[m
+Author: Salvador Rodríguez <39571410+tenajesus@users.noreply.github.com>
+Date:   Tue Aug 17 13:46:53 2021 -0500
+
+    Actualizacion del Readme
+
+[33mcommit e29c81e12ebe276f7b468ab50788eab75d6421bf[m
+Author: Salvador Rodríguez <39571410+tenajesus@users.noreply.github.com>
+Date:   Tue Aug 17 13:18:44 2021 -0500
+
+    Initial commit

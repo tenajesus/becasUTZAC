@@ -2,8 +2,8 @@
   <q-page class="flex flex-center">
     <img
       alt="Dgutp"
-      src="~assets/dgut.png"
-      style="width: 450px; height: 200px"
+      src="~assets/ut_renovado.png"
+      style="width: 150px; height: 180px"
     >
   </q-page>
 </template>
