@@ -10,11 +10,11 @@
           <div class="row">
             <div class="col-6">
               <label>Fecha de Captura</label>
-              <q-input bg-color="teal-2" outlined v-model="fecha_captura"/>
+              <q-input bg-color="teal-1" outlined v-model="fecha_captura"/>
             </div>
             <div class="col-6">
               <label>Número de Folio</label>
-              <q-input bg-color="teal-2" outlined v-model="folio"/>
+              <q-input bg-color="teal-1" outlined v-model="folio"/>
             </div>
           </div>
         </center>
@@ -22,14 +22,14 @@
         <div class="row">
             <div class="col-12">
               <label>Nombre</label>
-              <q-input bg-color="teal-2" outlined v-model="nombre"/>
+              <q-input bg-color="teal-1" outlined v-model="nombre"/>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-12">
               <label>Te informamos que tu solicitud está:</label>
-              <q-input bg-color="teal-2" outlined v-model="estatus"/>
+              <q-input bg-color="teal-1" outlined v-model="estatus"/>
             </div>
         </div>
       </q-card-section>
