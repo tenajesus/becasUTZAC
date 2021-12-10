@@ -37,7 +37,7 @@
         <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
           <q-list padding>
             
-            <q-item clickable v-ripple to="/">
+            <q-item clickable v-ripple to="/app">
               <q-item-section avatar>
                 <q-icon name="home" />
               </q-item-section>
@@ -46,7 +46,7 @@
                 Inicio
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple to="/perfil">
+            <!-- <q-item clickable v-ripple to="/perfil">
               <q-item-section avatar>
                 <q-icon name="person" />
               </q-item-section>
@@ -54,7 +54,7 @@
               <q-item-section>
                 Perfil
               </q-item-section>
-            </q-item>
+            </q-item> -->
             <q-item v-ripple 
             tag="a"
             target="_blank"

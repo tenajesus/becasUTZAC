@@ -1,19 +1,63 @@
 <template>
   <center>
-    <label>Dar click en el botón para confirmar tu matricula</label>
-    <br />
-    <div class="q-pa-md">
-      <q-btn
-        round
+    <div class="text-green text-center q-pa-md">
+      <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+              <label>Ingresa tu matricula</label>
+              <q-input bg-color="teal-1" outlined v-model="matriculauser" 
+              />
+              <br>
+              <q-btn
         color="amber"
         glossy
         text-color="black"
-        icon="touch_app"
-        @click="confirmarmatricula()"
+        icon-right="touch_app"
+        label="Confirmar Datos"
+        @click="confirmarmatricula(this.matriculauser)"
       />
-      <br /><br />
-      <q-input filled type="text" v-model="this.matricula" bg-color="teal-1" />
-    </div>
+            </div>
+            <div class="col-4">
+            </div>    
+      </div>   
+    <br>
+    <q-card class="my-card text-black">
+      <q-card-section>
+        <div class="row">
+            <div class="col-6">
+              <label>Matricula</label>
+              <q-input bg-color="teal-1" disable outlined v-model="this.matricula"/>
+            </div>
+            <div class="col-6">
+              <label>Status</label>
+              <q-input bg-color="teal-1" disable outlined v-model="statusmatricula"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <label>Nombre del Alumno</label>
+              <q-input bg-color="teal-1" disable outlined v-model="nombre"/>
+            </div>
+            <div class="col-6">
+              <label>Carrera</label>
+              <q-input bg-color="teal-1" disable outlined v-model="carrera"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <label>Cuatrimestre</label>
+              <q-input bg-color="teal-1" disable outlined v-model="cuatri"/>
+            </div>
+            <div class="col-6">
+              <label>Grupo</label>
+              <q-input bg-color="teal-1" disable outlined v-model="grupo"/>
+            </div>
+          </div>
+      </q-card-section>
+      <q-separator dark />
+    </q-card>
+  </div>
   </center>
   <div class="q-pa-md">
     <q-form>
@@ -371,6 +415,12 @@ export default defineComponent({
       atencionmedica: "",
       razon: "",
       matricula: "",
+      matriculauser:"",
+      statusmatricula:"",
+      nombre:"",
+      carrera:"",
+      cuatri:"",
+      grupo:"",
 
       sino: [
         { label: "SI", value: 1 },
@@ -412,23 +462,41 @@ export default defineComponent({
         { label: "Cuatro" , value:3 },
         { label: "Cinco" , value:4 }
         ],
-      estatushome: ["Propia", "Rentada", "Prestada"],
-      techo: ["Lámina(cartón, asbesto, madera)", "Concreto(colado,teja)"],
-      piso: ["Tierra", "Cemento", "Mosaico,loseta,madera laminada"],
-      combustible: ["Gas", "Petroleo", "Leña", "Carbón"],
+      estatushome: [
+        { label: "Propia" , value:0 },
+        { label: "Rentada" , value:1 },
+        { label: "Prestada" , value:2 }
+        ],
+      techo: [
+        { label: "Lámina(cartón, asbesto, madera)" , value:1 },
+        { label: "Concreto(colado,teja)" , value:0 }
+        ],
+      piso: [
+        { label: "Tierra" , value:3 },
+        { label: "Cemento" , value:2 },
+        { label: "Mosaico,loseta,madera laminada" , value:1 },
+        { label: "Parquet" , value:0 }
+        ],
+
+      combustible: [
+        { label: "Gas" , value:0 },
+        { label: "Petroleo" , value:1 },
+        { label: "Leña" , value:2 },
+        { label: "Carbón" , value:3 }
+        ],
       transportacion: [
-        "Automovil propio",
-        "Automovil Prestado",
-        "Transporte Publico",
-        "Moto",
-        "Bicicleta",
-        "Caminando",
+        { label: "Automovil propio" , value:0 },
+        { label: "Automovil Prestado" , value:1 },
+        { label: "Transporte Publico" , value:2 },
+        { label: "Moto" , value:3 },
+        { label: "Bicicleta" , value:4 },
+        { label: "Caminando" , value:5 }
       ],
       impulso: [
-        "No alcanzo a cubrir mis gastos para estudiar y requiero de un apoyo adicional",
-        "La situación económica familiar",
-        "Por sugerencia de mis padres",
-        "Me impulsaron mis compañeros",
+        { label: "No alcanzo a cubrir mis gastos para estudiar y requiero de un apoyo adicional" , value:3 },
+        { label: "La situación económica familiar" , value:2 },
+        { label: "Por sugerencia de mis padres" , value:1 },
+        { label: "Me impulsaron mis compañeros" , value:0 }
       ],
     };
   },
@@ -443,54 +511,54 @@ export default defineComponent({
           apoyoadicional: this.apoyoadicional,
           periodicidad: this.periodicidad,
           monto: this.monto,
-          dependiente: this.dependiente,
-          estadoc: this.estadoc,
-          tienehijos: this.tienehijos,
-          alumnotrabaja: this.alumnotrabaja,
-          dependen: this.dependen,
+          dependiente: this.dependiente.value,
+          estadoc: this.estadoc.value,
+          tienehijos: this.tienehijos.value,
+          alumnotrabaja: this.alumnotrabaja.value,
+          dependen: this.dependen.value,
           domicilio: this.domicilio,
-          miembros: this.miembros,
+          miembros: this.miembros.value,
           telefono: this.telefono,
-          renta: this.renta,
-          agua: this.agua,
-          alumbrado: this.alumbrado,
-          drenaje: this.drenaje,
-          escuela: this.escuela,
-          centrosalud: this.centrosalud,
-          pavimento: this.pavimento,
-          transporte: this.transporte,
-          internet: this.internet,
-          estatuscasa: this.estatuscasa,
-          sala: this.sala,
-          comedor: this.comedor,
-          cocina: this.cocina,
-          recamaras: this.recamaras,
-          cochera: this.cochera,
-          patio: this.patio,
-          jardin: this.jardin,
-          materialtecho: this.materialtecho,
-          materialpiso: this.materialpiso,
-          cama: this.cama,
-          lavadora: this.lavadora,
-          secadora: this.secadora,
-          calentador: this.calentador,
-          television: this.television,
-          computadora: this.computadora,
-          celular: this.celular,
-          estufa: this.estufa,
-          horno: this.horno,
-          refrigerador: this.refrigerador,
-          tipcombustible: this.tipcombustible,
-          transporteutzac: this.transporteutzac,
-          vivenpadres: this.vivenpadres,
-          trabajanpadres: this.trabajanpadres,
-          atencionmedica: this.atencionmedica,
-          razon: this.razon,
+          renta: this.renta.value,
+          agua: this.agua.value,
+          alumbrado: this.alumbrado.value,
+          drenaje: this.drenaje.value,
+          escuela: this.escuela.value,
+          centrosalud: this.centrosalud.value,
+          pavimento: this.pavimento.value,
+          transporte: this.transporte.value,
+          internet: this.internet.value,
+          estatuscasa: this.estatuscasa.value,
+          sala: this.sala.value,
+          comedor: this.comedor.value,
+          cocina: this.cocina.value,
+          recamaras: this.recamaras.value,
+          cochera: this.cochera.value,
+          patio: this.patio.value,
+          jardin: this.jardin.value,
+          materialtecho: this.materialtecho.value,
+          materialpiso: this.materialpiso.value,
+          cama: this.cama.value,
+          lavadora: this.lavadora.value,
+          secadora: this.secadora.value,
+          calentador: this.calentador.value,
+          television: this.television.value,
+          computadora: this.computadora.value,
+          celular: this.celular.value,
+          estufa: this.estufa.value,
+          horno: this.horno.value,
+          refrigerador: this.refrigerador.value,
+          tipcombustible: this.tipcombustible.value,
+          transporteutzac: this.transporteutzac.value,
+          vivenpadres: this.vivenpadres.value,
+          trabajanpadres: this.trabajanpadres.value,
+          atencionmedica: this.atencionmedica.value,
+          razon: this.razon.value,
           matricula: this.matricula,
+          matriculauser: this.matriculauser
         })
         .then((res) => {
           console.log(res);
-          this.disc = "";
           this.$q.notify({
             message: "Tu datos se han registrado con éxito",
             color: "positive",
@@ -502,18 +570,39 @@ export default defineComponent({
       this.$q.notify({
         message: "Tu datos se han eliminado",
         color: "danger",
-        position: "center",
+        position: "top-left",
       });
     },
-    confirmarmatricula() {
-      axios
-        .get("http://localhost/stpsback/public/index.php/api/alumnos")
-        .then((res) => {
-          const data = res.data;
-          this.matricula = data[0].matricula;
-          // console.log(data);
-          // console.log(res);
-        });
+    confirmarmatricula(matriculauser) {
+      
+      if(!this.matriculauser){
+        this.$q.notify({
+        message: "No se ha ingresado la matricula, o no se encontró tu registro",
+        color: "red",
+        position: "top-right",
+      });
+      } else {
+        axios
+          .get("http://localhost/stpsback/public/index.php/api/alumnos/"+matriculauser)
+          .then((res) => {
+            const data = res.data;
+            this.matricula = data[0].matricula;
+            this.nombre = data[0].nombre;
+            this.carrera = data[0].carrera;
+            this.cuatri = data[0].cuatrimestre;
+            this.grupo = data[0].grupo;
+            this.statusmatricula = "Confirmada"
+            this.$q.notify({
+              message: "Se ha localizado " + data.length + " registro",
+              color: "teal",
+              position: "top-right",
+              icon:"done"
+            });
+            console.log(data.length);
+            // console.log(res);
+          });
+      }
+      
     },
   },
 });
