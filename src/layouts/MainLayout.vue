@@ -19,7 +19,7 @@
       </q-toolbar>
       <div class="q-px-lg q-mb-md">
       <div class="text-h4">
-          Condonación de Colegiatura
+          Apoyos de Colegiatura
         </div>
         <div class="text-subtitle1">
           {{fecha}}
@@ -110,7 +110,7 @@
 
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="logout" />
+                <q-icon name="logout" @click="logout()" />
               </q-item-section>
 
               <q-item-section>
@@ -137,9 +137,9 @@
     <q-footer elevated>
         <q-toolbar class="glossy">
           <q-toolbar-title class="text-caption">
-            <center>
-            Universidad Tecnológica del Estado de Zacatecas - Desarrollado por CDS Tecnologías de la Información
-            </center>
+            
+            Universidad Tecnológica del Estado de Zacatecas
+            
             </q-toolbar-title>
         </q-toolbar>
       </q-footer>
@@ -152,6 +152,7 @@
 import { defineComponent, ref } from 'vue'
 import { date } from 'quasar'
 
+
 export default defineComponent({
   name: 'MainLayout',
 
@@ -163,12 +164,24 @@ export default defineComponent({
     const leftDrawerOpen = ref(false)
 
     return {
+      // estatus : this.$route.params.estadouser,
       // essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
+      leftDrawerOpen.value = !leftDrawerOpen.value
       }
       
+    }
+  },mounted(){
+    console.log(this.$route.params.logueado)
+    if(this.$route.params.logueado == undefined){
+    this.$router.push({path: "/"})
+    }
+  },methods:{
+    logout(){
+      this.$route.params.logueado = false
+      console.log(this.$route.params.logueado)
+      this.$router.push({path: "/"})
     }
   },
   computed:{

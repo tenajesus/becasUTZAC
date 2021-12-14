@@ -1,6 +1,5 @@
 <template>
-  <center>
-    <div class="text-green text-center q-pa-md">
+  <div class="text-green text-center q-pa-md">
       <div class="row">
             <div class="col-4">
             </div>
@@ -58,7 +57,6 @@
       <q-separator dark />
     </q-card>
   </div>
-  </center>
   <div class="q-pa-md">
     <q-form>
       <label>Tienes Alguna discapacidad motriz ?</label>
@@ -342,7 +340,7 @@
         <q-btn
           label="Guardar Datos"
           type="submit"
-          @click="guardarDatos()"
+          @click.prevent="guardarDatos()"
           color="teal"
         />
         &nbsp;
@@ -354,7 +352,6 @@
 
 <script>
 import { defineComponent } from "vue";
-import { ref } from "vue";
 import { useQuasar } from "quasar";
 import axios from "axios";
 
@@ -503,7 +500,7 @@ export default defineComponent({
   methods: {
     guardarDatos() {
       axios
-        .post("http://localhost/stpsback/public/index.php/api/estudio/add", {
+        .post("http://192.168.0.102/stpsback/public/index.php/api/estudio/add", {
           disc: this.disc.value,
           indigena: this.indigena.value,
           oportunidades: this.oportunidades.value,
@@ -583,7 +580,7 @@ export default defineComponent({
       });
       } else {
         axios
-          .get("http://localhost/stpsback/public/index.php/api/alumnos/"+matriculauser)
+          .get("http://192.168.0.102/stpsback/public/index.php/api/alumnos/"+matriculauser)
           .then((res) => {
             const data = res.data;
             this.matricula = data[0].matricula;

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-green text-center q-pa-md flex flex-center">
+  <div class="text-green text q-pa-md flex flex">
     <div>
       <div style="font-size: 4vh">
         Contacto

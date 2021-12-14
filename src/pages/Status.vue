@@ -24,7 +24,7 @@
       </q-card-section>
 
       <q-card-section>
-        <center>
+        
           <div class="row">
             <div class="col-6">
               <label>Fecha de Captura</label>
@@ -35,7 +35,7 @@
               <q-input bg-color="teal-1" outlined disable v-model="folio" />
             </div>
           </div>
-        </center>
+        
         <br />
         <div class="row">
           <div class="col-12">
@@ -86,7 +86,7 @@ export default defineComponent({
       } else {
         axios
           .get(
-            "http://localhost/stpsback/public/index.php/api/solicitudes/" +
+            "http://192.168.0.102/stpsback/public/index.php/api/solicitudes/" +
               matriculauser
           )
           .then((res) => {

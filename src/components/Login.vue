@@ -1,60 +1,68 @@
 <template>
-  <q-layout> 
-  <center>
-      <div class="q-pa-xl" style="max-width: 600px">
-     <q-card class="my-card" flat bordered>
-       <q-parallax
-        src="~assets/back.png"
-        :height="200"
-      />
-      <q-card-section>
-        <div class="text-caption">Universidad Tecnológica del Estado de Zacatecas</div>
-        <!-- <div class="text-body2">Ingresa tus datos</div> -->
-        <q-card-section>
-         <q-form 
-      class="q-gutter-md"
-    >
-      <q-input
-        filled
-        v-model="user"
-        label="Matrícula"
-        lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Este campo es obligatorio']"
-      />
+<center>
+  <q-layout>
+      <div class="q-pa-xl" style="max-width: 800px">
+        <q-card class="my-card" flat bordered>
+          <q-parallax src="~assets/back.png" :height="200" />
+          <q-card-section>
+            <div class="text-caption">
+              Universidad Tecnológica del Estado de Zacatecas
+            </div>
+            <!-- <div class="text-body2">Ingresa tus datos</div> -->
+            <q-card-section>
+              <q-form class="q-gutter-md">
+                <q-input
+                  filled
+                  v-model="matriculauser"
+                  label="Matrícula"
+                  lazy-rules
+                  :rules="[
+                    (val) =>
+                      (val && val.length > 0) || 'Este campo es obligatorio',
+                  ]"
+                />
 
-      <q-input
-        filled
-        type="pass"
-        v-model="pass"
-        label="Password*"
-        lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Este campo es obligatorio']"
-              
-      />
+                <q-input
+                  filled
+                  type="password"
+                  v-model="pass"
+                  label="Password*"
+                  lazy-rules
+                  :rules="[
+                    (val) =>
+                      (val && val.length > 0) || 'Este campo es obligatorio',
+                  ]"
+                />
 
-      
-      <div>
-        <q-btn label="Ingresar" type="button" @click="login()" color="primary"/>
-        <q-btn label="Limpiar" type="reset" color="primary" flat class="q-ml-sm" />
+                <div>
+                  <q-btn
+                    label="Ingresar"
+                    type="button"
+                    @click="login()"
+                    color="primary"
+                  />
+                  <q-btn
+                    label="Limpiar"
+                    type="reset"
+                    color="primary"
+                    flat
+                    class="q-ml-sm"
+                  />
+                </div>
+              </q-form>
+            </q-card-section>
+          </q-card-section>
+        </q-card>
       </div>
-    </q-form>
-        </q-card-section>
-      </q-card-section>
-    </q-card>
-  
-
-  </div>
-  </center> 
-  <q-footer elevated>
-        <q-toolbar>
-          <q-toolbar-title class="text-subtitle2">
-            <center>
-            Desarrollado por la Célula de Desarrollo de Software de la UTZAC
-            </center>
-            </q-toolbar-title>
-        </q-toolbar>
-      </q-footer>
-      </q-layout> 
+    <q-footer elevated>
+      <q-toolbar>
+        <q-toolbar-title class="text-subtitle2">
+          Célula de Desarrollo de Software TICS - UTZAC
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
+  </q-layout>
+  </center>
 </template>
 
 <script>
@@ -63,36 +71,75 @@ import axios from "axios";
 
 export default defineComponent({
   name: "Login",
+
   data() {
     return {
-      user: "",
+      matriculauser: "",
       pass: "",
+      logueado: false,
     };
   },
   methods: {
     login() {
-      console.log(this.user)
-      console.log(this.pass)
+      if (!this.matriculauser || !this.pass) {
+        this.logueado = false;
+        this.$q.notify({
+          message: "No haz ingresado ningun dato",
+          spinner: true,
+          timeout: 3000,
+          color: "amber-10",
+          position: "top-left",
+        });
+      } else {
+        axios
+          .get(
+            "http://192.168.0.102/stpsback/public/index.php/api/alumnos/" +
+              this.matriculauser
+          )
+          .then((res) => {
+            const data = res.data;
+            console.log(data);
+            console.log(data.length);
+            
 
-      // axios
-      //   .get("http://localhost/stpsback/public/index.php/api/alumnos")
-      //   .then((res) => {
-      //     const data = res.data;
-      //     this.matricula = data[0].matricula;
-      //     this.carrera = data[0].carrera;
-      //     this.grupo = data[0].grupo;
-      //     this.unidad = data[0].unidad;
-      //     this.especialidad = data[0].especialidad;
-      //     this.nombre = data[0].nombre;
-      //     console.log(res);
-      //   });
+            if(data.length == 1){
+            console.log('Hasta ahora todo bien');
+            let userdb = data[0].matricula;
+            
+            if(userdb) {
+              console.log(data);
+              this.logueado = true;
+              this.$q.notify({
+                message:
+                  "Bienvenido(a) " + data[0].nombre + " por favor espera",
+                spinner: true,
+                timeout: 2000,
+                color: "green",
+                position: "top-left",
+              });
+              this.$router.push({ name: "aplicacion", params: { logueado: this.logueado } });
+            }
+            } 
+            else {
+            this.$q.notify({
+                message: "Tus datos no son correctos o no estan registrados",
+                spinner: true,
+                timeout: 3000,
+                color: "red",
+                position: "top-left",
+              });
+            }
+        });
+      }
+    },
+    redirect() {
+      // this.$router.push({ path: "/app", params: { logueado: this.logueado } });
     },
   },
 });
 </script>
 <style scoped>
-body{
+body {
   background: red;
 }
-
 </style>
