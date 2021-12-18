@@ -72,7 +72,7 @@ export default defineComponent({
       name: "",
       estatus: "",
       matriculauser: "",
-    };
+    };Por
   },
   methods: {
     buscarRegistro(matriculauser) {
@@ -86,12 +86,12 @@ export default defineComponent({
       } else {
         axios
           .get(
-            "http://192.168.0.102/stpsback/public/index.php/api/solicitudes/" +
+            "http://apoyos.utzac.edu.mx/stpsback/public/index.php/api/solicitudes/" +
               matriculauser
           )
           .then((res) => {
             const data = res.data;
-            console.log(data);
+            //console.log(data);
 
            if (data.length > 0) {
               this.folio = data[0].id;

@@ -44,9 +44,9 @@
                   <q-btn
                     label="Limpiar"
                     type="reset"
-                    color="primary"
-                    flat
-                    class="q-ml-sm"
+                    color="teal"
+                    
+                    @click="reset()"
                   />
                 </div>
               </q-form>
@@ -93,21 +93,21 @@ export default defineComponent({
       } else {
         axios
           .get(
-            "http://192.168.0.102/stpsback/public/index.php/api/alumnos/" +
+            "http://apoyos.utzac.edu.mx/stpsback/public/index.php/api/alumnos/" +
               this.matriculauser
           )
           .then((res) => {
             const data = res.data;
-            console.log(data);
-            console.log(data.length);
+            // console.log(data);
+            // console.log(data.length);
             
 
             if(data.length == 1){
-            console.log('Hasta ahora todo bien');
+            //console.log('Hasta ahora todo bien');
             let userdb = data[0].matricula;
             
             if(userdb) {
-              console.log(data);
+              //console.log(data);
               this.logueado = true;
               this.$q.notify({
                 message:
@@ -117,7 +117,11 @@ export default defineComponent({
                 color: "green",
                 position: "top-left",
               });
-              this.$router.push({ name: "aplicacion", params: { logueado: this.logueado } });
+              this.$router.push({ name: "aplicacion", 
+              params: { 
+              logueado: this.logueado,
+              matriculauser: this.matriculauser
+               } });
             }
             } 
             else {
@@ -132,8 +136,10 @@ export default defineComponent({
         });
       }
     },
-    redirect() {
-      // this.$router.push({ path: "/app", params: { logueado: this.logueado } });
+    reset() {
+      this.matriculauser = "",
+      this.pass = "",
+      this.logueado = false
     },
   },
 });

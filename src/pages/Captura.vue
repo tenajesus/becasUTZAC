@@ -60,15 +60,16 @@
   <div class="q-pa-md">
     <q-form>
       <label>Tienes Alguna discapacidad motriz ?</label>
-      <q-select filled v-model="disc" :options="sino" bg-color="teal-1" />
+      <q-select filled v-model="disc" :options="sino" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']"/>
       <label>Eres Integrante de algún grupo indigena ?</label>
-      <q-select filled v-model="indigena" :options="sino" bg-color="teal-1" />
+      <q-select filled v-model="indigena" :options="sino" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label>Tu Familia recibe apoyo del programa oportunidades</label>
       <q-select
         filled
         v-model="oportunidades"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label
         >¿Eres beneficiario de algún apoyo (beca) Federal, Estatal y/o Municipal
@@ -78,20 +79,21 @@
         filled
         v-model="becafederal"
         :options="nosi"
-        bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label>Nombre de la Beca</label>
-      <q-input filled type="text" v-model="apoyoadicional" bg-color="teal-1" />
+      <q-input filled type="text" v-model="apoyoadicional" bg-color="teal-1" label="En caso de no recibir beca responde: No recibo beca" />
       <label>Periodicidad con que recibes el apoyo</label>
-      <q-input filled type="text" v-model="periodicidad" bg-color="teal-1" />
+      <q-input filled type="text" v-model="periodicidad" label="En caso de no recibir beca responde: No recibo beca" bg-color="teal-1" />
       <label>Monto recibido</label>
-      <q-input filled v-model="monto" bg-color="teal-1" />
+      <q-input filled v-model="monto" type="number"  bg-color="teal-1" label="En caso de no recibir beca responde: 0" />
       <label>¿ Dependes económicamente de tus padres ?</label>
       <q-select
         filled
         v-model="dependiente"
         :options="sino"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label>¿ Estado Civil ?</label>
       <q-select
@@ -99,6 +101,7 @@
         v-model="estadoc"
         :options="estadocivil"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label>¿ Número de Hijos ?</label>
       <q-select
@@ -106,6 +109,7 @@
         v-model="tienehijos"
         :options="hijos"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label>¿ Trabajas Actualmente ?</label>
       <q-select
@@ -113,6 +117,7 @@
         v-model="alumnotrabaja"
         :options="sino"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label
         >¿ Cuantos miembros de tu familia dependen económicamente de ti ?</label
@@ -122,9 +127,10 @@
         v-model="dependen"
         :options="dependientes"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label>Domicilio en el que habitas Actualmente</label>
-      <q-input filled v-model="domicilio" label="Calle, numero, colonia, CP" />
+      <q-input filled v-model="domicilio" label="Calle, numero, colonia, CP" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label
         >¿Cuántos miembros son en tu familia, contando a todos los familares que
         viven en la misma casa?</label
@@ -136,159 +142,179 @@
         bg-color="teal-1"
       />
       <label>Telefóno de contacto de tus padres/tut@r/algún familiar </label>
-      <q-input filled v-model="telefono" />
+      <q-input filled v-model="telefono" mask="(###) ### - ####" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label
         >¿ Para acudir a la Universidad tienes que rentar cuarto o casa, o vivir
         con algún familiar ?</label
       >
-      <q-select filled v-model="renta" :options="sino" bg-color="teal-1" />
+      <q-select filled v-model="renta" :options="sino" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <hr />
       ¿Tipos de servicios que existen en el lugar donde vives?
       <hr />
       <label>Agua Potable</label>
-      <q-select filled v-model="agua" :options="nosi" bg-color="teal-1" />
+      <q-select filled v-model="agua" :options="nosi" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label>Alumbrado Publico</label>
-      <q-select filled v-model="alumbrado" :options="nosi" bg-color="teal-1" />
+      <q-select filled v-model="alumbrado" :options="nosi" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label>Drenaje</label>
       <q-select
         filled
         v-model="drenaje"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Escuela</label>
       <q-select
         filled
         v-model="escuela"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Centro de Salud u Hospital</label>
       <q-select
         filled
         v-model="centrosalud"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Pavimento</label>
-      <q-select filled v-model="pavimento" :options="nosi" bg-color="teal-1" />
+      <q-select filled v-model="pavimento" :options="nosi" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']"/>
       <label>Tranporte público</label>
       <q-select
         filled
         v-model="transporte"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Internet</label>
       <q-select
         filled
         v-model="internet"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>¿ La casa donde vive tu familia es ?</label>
       <q-select
         filled
         v-model="estatuscasa"
         :options="estatushome"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <hr />
       Características de la Casa
       <hr />
       <label>Sala</label>
-      <q-select filled v-model="sala" :options="nosi" bg-color="teal-1" />
+      <q-select filled v-model="sala" :options="nosi" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label>Comedor</label>
-      <q-select filled v-model="comedor" :options="nosi" bg-color="teal-1" />
+      <q-select filled v-model="comedor" :options="nosi" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label>Cocina</label>
       <q-select
         filled
         v-model="cocina"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Recamaras</label>
       <q-select
         filled
         v-model="recamaras"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Cochera</label>
       <q-select
         filled
         v-model="cochera"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Patio</label>
-      <q-select filled v-model="patio" :options="nosi" bg-color="teal-1" />
+      <q-select filled v-model="patio" :options="nosi" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']"/>
       <label>Jardín</label>
       <q-select
         filled
         v-model="jardin"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>¿El material del techo de la vivienda es de...?</label>
       <q-select
         filled
         v-model="materialtecho"
         :options="techo"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>¿ El material del piso de la vivienda es de… ?</label>
       <q-select
         filled
         v-model="materialpiso"
         :options="piso"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <hr />
       Señala si cuentas con los siguientes aparatos o muebles
       <hr />
       <label>Cama</label>
-      <q-select filled v-model="cama" :options="nosi" bg-color="teal-1" />
+      <q-select filled v-model="cama" :options="nosi" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label>Lavadora de Ropa</label>
-      <q-select filled v-model="lavadora" :options="nosi" bg-color="teal-1" />
+      <q-select filled v-model="lavadora" :options="nosi" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']" />
       <label>Secadora de Ropa</label>
       <q-select
         filled
         v-model="secadora"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Calentador de Agua</label>
       <q-select
         filled
         v-model="calentador"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Televisor</label>
       <q-select
         filled
         v-model="television"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Computadora Personal</label>
       <q-select
         filled
         v-model="computadora"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Teléfono local y/o celular</label>
       <q-select
         filled
         v-model="celular"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Estufa</label>
       <q-select
         filled
         v-model="estufa"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Horno (microondas/tostador)</label>
       <q-select
         filled
         v-model="horno"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       /><label>Refrigerador</label>
       <q-select
         filled
         v-model="refrigerador"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label>¿Qué tipo de combustible que utilizan en tu casa?</label>
       <q-select
@@ -296,6 +322,7 @@
         v-model="tipcombustible"
         :options="combustible"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label
         >¿Qué medio de transportes utilizas para llegar a la Universidad
@@ -306,6 +333,7 @@
         v-model="transporteutzac"
         :options="transportacion"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label>¿ Viven tus padres ?</label>
       <q-select
@@ -313,13 +341,16 @@
         v-model="vivenpadres"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
+      
       <label>¿ Actualmente trabajan tus padres ?</label>
       <q-select
         filled
         v-model="trabajanpadres"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label
         >¿ Tu familia cuenta con atención médica (por parte de alguna
@@ -330,12 +361,13 @@
         v-model="atencionmedica"
         :options="nosi"
         bg-color="teal-1"
+        :rules="[val => !!val || 'Este campo es obligatorio']"
       />
       <label
         >¿ Cuál es la razón más importante que te impulsó a solicitar la
         condonación de colegiatura ?</label
       >
-      <q-select filled v-model="razon" :options="impulso" bg-color="teal-1" />
+      <q-select filled v-model="razon" :options="impulso" bg-color="teal-1" :rules="[val => !!val || 'Este campo es obligatorio']"/>
       <div>
         <q-btn
           label="Guardar Datos"
@@ -457,7 +489,7 @@ export default defineComponent({
         { label: "Dos" , value:1 },
         { label: "Tres" , value:2 },
         { label: "Cuatro" , value:3 },
-        { label: "Cinco" , value:4 }
+        { label: "Cinco o mas" , value:4 }
         ],
       estatushome: [
         { label: "Propia" , value:0 },
@@ -499,76 +531,91 @@ export default defineComponent({
   },
   methods: {
     guardarDatos() {
-      axios
-        .post("http://192.168.0.102/stpsback/public/index.php/api/estudio/add", {
-          disc: this.disc.value,
-          indigena: this.indigena.value,
-          oportunidades: this.oportunidades.value,
-          becafederal: this.becafederal.value,
-          apoyoadicional: this.apoyoadicional,
-          periodicidad: this.periodicidad,
-          monto: this.monto,
-          dependiente: this.dependiente.value,
-          estadoc: this.estadoc.value,
-          tienehijos: this.tienehijos.value,
-          alumnotrabaja: this.alumnotrabaja.value,
-          dependen: this.dependen.value,
-          domicilio: this.domicilio,
-          miembros: this.miembros.value,
-          telefono: this.telefono,
-          renta: this.renta.value,
-          agua: this.agua.value,
-          alumbrado: this.alumbrado.value,
-          drenaje: this.drenaje.value,
-          escuela: this.escuela.value,
-          centrosalud: this.centrosalud.value,
-          pavimento: this.pavimento.value,
-          transporte: this.transporte.value,
-          internet: this.internet.value,
-          estatuscasa: this.estatuscasa.value,
-          sala: this.sala.value,
-          comedor: this.comedor.value,
-          cocina: this.cocina.value,
-          recamaras: this.recamaras.value,
-          cochera: this.cochera.value,
-          patio: this.patio.value,
-          jardin: this.jardin.value,
-          materialtecho: this.materialtecho.value,
-          materialpiso: this.materialpiso.value,
-          cama: this.cama.value,
-          lavadora: this.lavadora.value,
-          secadora: this.secadora.value,
-          calentador: this.calentador.value,
-          television: this.television.value,
-          computadora: this.computadora.value,
-          celular: this.celular.value,
-          estufa: this.estufa.value,
-          horno: this.horno.value,
-          refrigerador: this.refrigerador.value,
-          tipcombustible: this.tipcombustible.value,
-          transporteutzac: this.transporteutzac.value,
-          vivenpadres: this.vivenpadres.value,
-          trabajanpadres: this.trabajanpadres.value,
-          atencionmedica: this.atencionmedica.value,
-          razon: this.razon.value,
-          matricula: this.matricula,
-          matriculauser: this.matriculauser
-        })
-        .then((res) => {
-          console.log(res);
-          this.$q.notify({
-            message: "Tu datos se han registrado con éxito",
-            color: "positive",
-            position: "center",
-          });
-        });
-    },
-    elimina() {
-      this.$q.notify({
-        message: "Tu datos se han eliminado",
-        color: "danger",
-        position: "top-left",
+
+      if( this.disc == '' || this.indigena == '' ||
+      this.oportunidades == '' || this.becafederal == ''|| this.apoyoadicional == '' || this.periodicidad == '' || this.monto == '' || 
+      this.dependiente == '' || this.estadoc == '' || this.tienehijos == '' || this.alumnotrabaja == '' || this.dependen == '' || 
+      this.domicilio == '' || this.miembros == '' || this.telefono == '' || this.renta == '' || this.agua == '' || 
+      this.alumbrado == '' || this.drenaje == '' || this.escuela == '' || this.centrosalud == '' || 
+      this.pavimento == '' || this.transporte == '' || this.internet == '' || this.estatuscasa == '' || this.sala == '' || 
+      this.comedor == '' || this.cocina == '' || this.recamaras == '' || this.cochera == '' || this.patio == '' || this.jardin.value == '' || 
+      this.materialtecho == '' || this.materialpiso == '' || this.cama == '' || this.lavadora == '' || this.secadora == '' || 
+      this.calentador == '' || this.television == '' || this.computadora == '' || this.celular == '' || this.estufa == '' || this.horno == '' || 
+      this.refrigerador == '' || this.tipcombustible == '' || this.transporteutzac == '' || this.vivenpadres == '' || this.trabajanpadres == '' || 
+      this.atencionmedica == '' || this.razon == '') {
+        this.$q.notify({
+        message: "Hacen falta campos por capturar",
+        type:"negative", 
+        position: "center"
       });
+      } else { 
+
+
+        axios
+          .post("http://apoyos.utzac.edu.mx/stpsback/public/index.php/api/estudio/add", {
+            disc: this.disc.value,
+            indigena: this.indigena.value,
+            oportunidades: this.oportunidades.value,
+            becafederal: this.becafederal.value,
+            apoyoadicional: this.apoyoadicional,
+            periodicidad: this.periodicidad,
+            monto: this.monto,
+            dependiente: this.dependiente.value,
+            estadoc: this.estadoc.value,
+            tienehijos: this.tienehijos.value,
+            alumnotrabaja: this.alumnotrabaja.value,
+            dependen: this.dependen.value,
+            domicilio: this.domicilio,
+            miembros: this.miembros.value,
+            telefono: this.telefono,
+            renta: this.renta.value,
+            agua: this.agua.value,
+            alumbrado: this.alumbrado.value,
+            drenaje: this.drenaje.value,
+            escuela: this.escuela.value,
+            centrosalud: this.centrosalud.value,
+            pavimento: this.pavimento.value,
+            transporte: this.transporte.value,
+            internet: this.internet.value,
+            estatuscasa: this.estatuscasa.value,
+            sala: this.sala.value,
+            comedor: this.comedor.value,
+            cocina: this.cocina.value,
+            recamaras: this.recamaras.value,
+            cochera: this.cochera.value,
+            patio: this.patio.value,
+            jardin: this.jardin.value,
+            materialtecho: this.materialtecho.value,
+            materialpiso: this.materialpiso.value,
+            cama: this.cama.value,
+            lavadora: this.lavadora.value,
+            secadora: this.secadora.value,
+            calentador: this.calentador.value,
+            television: this.television.value,
+            computadora: this.computadora.value,
+            celular: this.celular.value,
+            estufa: this.estufa.value,
+            horno: this.horno.value,
+            refrigerador: this.refrigerador.value,
+            tipcombustible: this.tipcombustible.value,
+            transporteutzac: this.transporteutzac.value,
+            vivenpadres: this.vivenpadres.value,
+            trabajanpadres: this.trabajanpadres.value,
+            atencionmedica: this.atencionmedica.value,
+            razon: this.razon.value,
+            matricula: this.matricula,
+            matriculauser: this.matriculauser
+          })
+          .then((res) => {
+            //console.log(res);
+            this.$q.notify({
+              message: "Tu datos se han registrado con éxito",
+              color: "positive",
+              position: "center",
+            });
+          });
+      }
+
     },
     confirmarmatricula(matriculauser) {
       
@@ -580,7 +627,7 @@ export default defineComponent({
       });
       } else {
         axios
-          .get("http://192.168.0.102/stpsback/public/index.php/api/alumnos/"+matriculauser)
+          .get("http://apoyos.utzac.edu.mx/stpsback/public/index.php/api/alumnos/"+matriculauser)
           .then((res) => {
             const data = res.data;
             this.matricula = data[0].matricula;
@@ -595,7 +642,7 @@ export default defineComponent({
               position: "top-right",
               icon:"done"
             });
-            console.log(data.length);
+            //console.log(data.length);
             // console.log(res);
           });
       }
