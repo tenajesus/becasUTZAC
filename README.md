@@ -1,4 +1,4 @@
 # becasUTZAC
 
-# El desarrollo del proyecto BECAS UTZACsdsfsd
+# El desarrollo del proyecto BECAS UTZACsd
 # Prueba
